@@ -1,9 +1,10 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import BookEdit from "./BookEdit";
+import useBooks from "../hooks/use-books";
 
-function BookShow({ book, editBookById, deleteBookById }) {
+function BookShow({ book }) {
   const [edit, setEdit] = useState(false);
+  const { deleteBookById } = useBooks();
 
   const handleEditClick = () => {
     setEdit(!edit);
@@ -13,14 +14,13 @@ function BookShow({ book, editBookById, deleteBookById }) {
     deleteBookById(book.id);
   };
 
-  const handleSave = (title) => {
+  const handleSave = () => {
     setEdit(false);
-    editBookById(book.id, title);
   };
 
   let content = <h3>{book.title}</h3>;
   if (edit) {
-    content = <BookEdit book={book} handleSave={handleSave} />;
+    content = <BookEdit book={book} onSave={handleSave} />;
   }
 
   return (

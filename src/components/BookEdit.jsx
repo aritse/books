@@ -1,8 +1,9 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import useBooks from "../hooks/use-books";
 
-function BookEdit({ book, handleSave }) {
+function BookEdit({ book, onSave }) {
   const [title, setTitle] = useState(book.title);
+  const { editBookById } = useBooks();
 
   const handleChange = (event) => {
     setTitle(event.target.value);
@@ -10,7 +11,8 @@ function BookEdit({ book, handleSave }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleSave(title);
+    onSave();
+    editBookById(book.id, title);
   };
 
   return (

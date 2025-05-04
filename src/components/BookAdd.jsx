@@ -1,8 +1,9 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import useBooks from "../hooks/use-books";
 
-function BookAdd({ addBook }) {
+function BookAdd() {
   const [title, setTitle] = useState("");
+  const { addBook } = useBooks();
 
   const handleChange = (event) => {
     setTitle(event.target.value);
