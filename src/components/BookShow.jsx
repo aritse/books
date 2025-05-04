@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import BookEdit from "./BookEdit";
 
@@ -28,7 +29,7 @@ function BookShow({ book, editBookById, deleteBookById }) {
         <button className="edit" onClick={handleEditClick} />
         <button className="delete" onClick={handleDeleteClick} />
       </div>
-      <img src="https://picsum.photos/300/200" alt="book" />
+      <img src={`https://picsum.photos/seed/${book.id}300/200`} alt="book" />
       <div>{content}</div>
     </div>
   );

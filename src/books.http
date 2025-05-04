@@ -1,0 +1,29 @@
+###
+
+POST http://localhost:3005/books HTTP/1.1
+content-type: application/json
+
+{
+    "title": "ABC"
+}
+
+###
+
+GET http://localhost:3005/books HTTP/1.1
+content-type: application/json
+
+###
+
+DELETE http://localhost:3005/books/f1be HTTP/1.1
+content-type: application/json
+
+###
+
+PUT http://localhost:3005/books/c535 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Harry Potter 2"
+}
+
+
