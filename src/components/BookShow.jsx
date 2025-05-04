@@ -8,13 +8,13 @@ function BookShow({ book, editBookById, deleteBookById }) {
     setEdit(!edit);
   };
 
+  const handleDeleteClick = () => {
+    deleteBookById(book.id);
+  };
+
   const handleSave = (title) => {
     setEdit(false);
     editBookById(book.id, title);
-  };
-
-  const handleDeleteClick = () => {
-    deleteBookById(book.id);
   };
 
   let content = <h3>{book.title}</h3>;

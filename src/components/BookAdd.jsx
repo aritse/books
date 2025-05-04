@@ -14,7 +14,7 @@ function BookAdd({ addBook }) {
   };
 
   return (
-    <div className="book-create">
+    <div className="book-add">
       <h3>Add a Book</h3>
       <form onSubmit={handleSubmit}>
         <label className="label">Title</label>
